@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAboutDialog = new AboutDialogFragment();
-        if (savedInstanceState == null) {
-            F1.newInstance().show(getFragmentManager(), null);
-        }
+//        if (savedInstanceState == null) {
+//            F1.newInstance().show(getFragmentManager(), null);
+//        }
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 
@@ -104,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
             DialogFragment newFragment = new AboutDialogFragment();
             newFragment.show(getFragmentManager(), ABOUT_DIALOG_TAG);
             return true;
+        }
+        else if (id == R.id.popup_root){
+            F1.newInstance().show(getFragmentManager(), null);
         }
 
         return super.onOptionsItemSelected(item);
